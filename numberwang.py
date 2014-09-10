@@ -1,5 +1,6 @@
 import sys
 import os
+import random
 from hashlib import md5
 from base64 import b64encode
 
@@ -64,6 +65,10 @@ def main():
     global _state
     _state = calculate_state(data)
     
+    player_name = raw_input("Please Enter Your Name. ")
+    if player_name.lower() not in ('julie', 'simon'): player_name = random.choice(['Julie', 'Simon'])
+    print 'Okay, ' + player_name
+    print "LET'S PLAY NUMBERWANG!"
     
     while not is_numberwang(raw_input('? ')):
         pass
